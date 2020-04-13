@@ -13,7 +13,7 @@ Build a GeoServer image with specified plugins and data directory.
   --plugins=vectortiles,monitor \
   --community=backup-restore,s3-geotiff \
   --console-disabled=true \
-  <path-2-gs-data-dir>
+  <path-to-gs-data-dir>
 ```
 
 ```
@@ -21,5 +21,5 @@ Build a GeoServer image with specified plugins and data directory.
   -p vectortiles,monitor \
   -c backup-restore,s3-geotiff \
   -d=true \
-  <path-2-gs-data-dir>
+  <path-to-gs-data-dir>
 ```
