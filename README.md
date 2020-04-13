@@ -43,7 +43,7 @@ OPTIONS:
   -h, --help                Show this message.
 ```
 
-### usage examples:
+### usage examples
 
 ```
 ./build.sh --version=2.17 \
