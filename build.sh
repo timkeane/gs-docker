@@ -10,6 +10,7 @@ usage() {
   this_file=${0}
   read -r -d "" USAGE <<EOF
 USAGE:
+
   ${this_file} [OPTIONS] GEOSERVER_DATA_DIR
     OR
   ${this_file} GEOSERVER_DATA_DIR
