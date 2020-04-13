@@ -79,7 +79,6 @@ if [ "${DATA_DIR}" = "" ]; then
   usage 1
 fi
 
-
 rm -rf ./.data_dir
 mkdir ./.data_dir
 cp -r ${DATA_DIR}/* ./.data_dir
