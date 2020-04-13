@@ -10,6 +10,7 @@ Build a GeoServer image with specified plugins and data directory.
 
 ```
 USAGE:
+
   ./build.sh [OPTIONS] GEOSERVER_DATA_DIR
     OR
   ./build.sh GEOSERVER_DATA_DIR
