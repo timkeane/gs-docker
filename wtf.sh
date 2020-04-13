@@ -72,22 +72,3 @@ echo \
   && echo COMMUNITY=${COMMUNITY} \
   && echo CONSOLE_DISABLED=${CONSOLE_DISABLED} \
   && echo
-
-if [ "${DATA_DIR}" = "" ]; then
-  echo -e "\e[31mERROR: Path to GEOSERVER_DATA_DIR is a required argument\e[0m"
-  usage 1
-fi
-
-
-rm -rf ./.data_dir
-mkdir ./.data_dir
-cp -r ${DATA_DIR}/* ./.data_dir
-
-docker build \
-  --build-arg DATA_DIR="${DATA_DIR}" \
-  --build-arg VERSION="${VERSION}" \
-  --build-arg PLUGINS="${PLUGINS}" \
-  --build-arg COMMUNITY="${COMMUNITY}" \
-  --build-arg CONSOLE_DISABLED="${CONSOLE_DISABLED}" . \
-
-rm -rf ./.data_dir
