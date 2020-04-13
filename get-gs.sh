@@ -12,6 +12,7 @@ wget --no-check-certificate --progress=bar:force:noscroll \
   https://build.geoserver.org/geoserver/${VERSION}.x/geoserver-${VERSION}.x-latest-war.zip
 unzip -q geoserver-${VERSION}.x-latest-war.zip
 unzip -q geoserver.war -d ../.geoserver
+rm -rf ../.geoserver/data
 rm -rf *
 
 for PLUGIN in "${PLUGINS[@]}" 

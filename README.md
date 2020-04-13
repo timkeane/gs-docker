@@ -1,5 +1,6 @@
 # gs-docker
 
-build a geoserver image with plugins
+Build a GeoServer image with specified plugins and data directory.
 
-TODO add in data dir
+```./build.sh --help```
+
