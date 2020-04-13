@@ -17,25 +17,25 @@ USAGE:
 OPTIONS:
 
   -v, --version             Specify a GeoServer major version.
-                            (default 2.17)
+                            (default ${VERSION})
                             Examples:
                                 -v 2.17
                                 --version=2.17
 
   -p, --plugins             Specify a comma delimited list of GeoServer Plugins.
-                            (default vectortiles,monitor)
+                            (default ${PLUGINS})
                             Examples:
                                 -p vectortiles,monitor
                                 --plugins=vectortiles,monitor
 
   -c, --community           Specify a comma delimited list of GeoServer Community Plugins.
-                            (default backup-restore)
+                            (default ${COMMUNITY})
                             Examples:
                                 -c backup-restore,s3-geotiff
                                 --community=backup-restore,s3-geotiff
 
   -d, --console-disabled   Specify a comma delimited list of GeoServer Community Plugins.
-                            (default true)
+                            (default ${CONSOLE_DISABLED})
                             Examples:
                                 -d false
                                 --console-disabled=false
