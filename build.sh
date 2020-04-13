@@ -84,7 +84,6 @@ mkdir ./.data_dir
 cp -r ${DATA_DIR}/* ./.data_dir
 
 docker build \
-  --build-arg DATA_DIR="${DATA_DIR}" \
   --build-arg VERSION="${VERSION}" \
   --build-arg PLUGINS="${PLUGINS}" \
   --build-arg COMMUNITY="${COMMUNITY}" \
