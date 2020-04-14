@@ -67,10 +67,10 @@ for arg in "${@}"; do
 done
 
 echo \
-  && echo DATA_DIR=${DATA_DIR} \
   && echo VERSION=${VERSION} \
   && echo PLUGINS=${PLUGINS} \
   && echo COMMUNITY=${COMMUNITY} \
+  && echo DATA_DIR=${DATA_DIR} \
   && echo CONSOLE_DISABLED=${CONSOLE_DISABLED} \
   && echo
 
