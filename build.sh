@@ -35,11 +35,11 @@ OPTIONS:
                                 -c backup-restore,s3-geotiff
                                 --community=backup-restore,s3-geotiff
 
-  -d, --console-disabled   Specify a comma delimited list of GeoServer Community Plugins.
+  -d, --console-disabled    Specify whether or not to include the GeoServer admin console.
                             (default ${CONSOLE_DISABLED})
                             Examples:
                                 -d false
-                                --console-disabled=false
+                                --console-disabled=true
 
   -h, --help                Show this message.
 EOF
