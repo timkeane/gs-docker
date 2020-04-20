@@ -41,6 +41,12 @@ OPTIONS:
                                 -d false
                                 --console-disabled=true
 
+  -r, --rm-masterpw-info    Specify whether or not to automatically remove the masterpw.info file.
+                            (default ${RM_MASTERPW_INFO})
+                            Examples:
+                                -r false
+                                --rm-masterpw-info=true
+
   -h, --help                Show this message.
 ```
 
@@ -51,6 +57,7 @@ OPTIONS:
   --plugins=vectortiles,monitor \
   --community=backup-restore,s3-geotiff \
   --console-disabled=true \
+  --rm-masterpw-info=false \
   <path-to-gs-data-dir>
 ```
 
@@ -59,5 +66,6 @@ OPTIONS:
   -p vectortiles,monitor \
   -c backup-restore,s3-geotiff \
   -d=true \
+  -r true \
   <path-to-gs-data-dir>
 ```

@@ -1,9 +1,10 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 VERSION=2.17
 PLUGINS="vectortiles,monitor"
 COMMUNITY="backup-restore"
 CONSOLE_DISABLED=true
+RM_MASTERPW_INFO=false
 DATA_DIR=()
 
 usage() {
@@ -41,6 +42,12 @@ OPTIONS:
                                 -d false
                                 --console-disabled=true
 
+  -r, --rm-masterpw-info    Specify whether or not to automatically remove the masterpw.info file.
+                            (default ${RM_MASTERPW_INFO})
+                            Examples:
+                                -r false
+                                --rm-masterpw-info=true
+
   -h, --help                Show this message.
 EOF
   echo
@@ -59,6 +66,8 @@ for arg in "${@}"; do
     -c=* | --community=* ) COMMUNITY="${1#*=}"; shift ;;
     -d | --console-disabled ) CONSOLE_DISABLED="${2}"; shift 2 ;;
     -d=* | --console-disabled=* ) CONSOLE_DISABLED="${1#*=}"; shift ;;
+    -r | --rm-masterpw-info ) RM_MASTERPW_INFO="${2}"; shift 2 ;;
+    -r=* | --rm-masterpw-info=* ) RM_MASTERPW_INFO="${1#*=}"; shift ;;
     -h | --help ) usage 0; shift ;;
     --) shift; break ;;
     -* | --*=) echo -e "\e[31mERROR: Unsupported flag ${1}\e[0m"; usage 1 ;;
@@ -72,6 +81,7 @@ echo \
   && echo COMMUNITY=${COMMUNITY} \
   && echo DATA_DIR=${DATA_DIR} \
   && echo CONSOLE_DISABLED=${CONSOLE_DISABLED} \
+  && echo RM_MASTERPW_INFO=${RM_MASTERPW_INFO} \
   && echo
 
 if [ "${DATA_DIR}" = "" ]; then
@@ -87,6 +97,8 @@ docker build \
   --build-arg VERSION="${VERSION}" \
   --build-arg PLUGINS="${PLUGINS}" \
   --build-arg COMMUNITY="${COMMUNITY}" \
-  --build-arg CONSOLE_DISABLED="${CONSOLE_DISABLED}" . \
+  --build-arg CONSOLE_DISABLED="${CONSOLE_DISABLED}" \
+  --build-arg RM_MASTERPW_INFO="${RM_MASTERPW_INFO}" \
+  --tag "geoserver:${VERSION}" .
 
 rm -rf ./.data_dir
